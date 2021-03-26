@@ -7,4 +7,6 @@ urlpatterns=[
     path('<str:roll>/delete/',views.deleteData,name='delete'),
     path('<str:roll>/edit/',views.editData,name='edit'),
     path('add/',views.addData,name='add'),
+    path('savedata/',views.saveData,name='save'),
+    path('<str:roll>/editdata/',views.editField,name='editdata')
 ]

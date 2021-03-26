@@ -2,7 +2,7 @@ from django.db import models
 
 class StudentData(models.Model):
     name=models.CharField(max_length=250)
-    roll=models.CharField(max_length=9)
+    roll=models.CharField(max_length=9,unique=True)
     department=models.CharField(max_length=100)
     hostel=models.CharField(max_length=50)
 

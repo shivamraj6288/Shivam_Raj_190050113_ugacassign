@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add</title>
+</head>
+<body>
+{{ ErrorMessage }}
+    <form action="{% url 'student:save' %}" method="post">
+        {%  csrf_token %}
+        Name:<input name="name" value="{{ name }}"><br>
+        Roll:<input name="roll" value="{{ roll }}"><br>
+        Department:<input name="department" value="{{ dept }}"><br>
+        Hostel:<input name="hostel" value="{{ hostel }}"><br>
+        <input type="submit">
+    </form>
+</body>
+</html>
