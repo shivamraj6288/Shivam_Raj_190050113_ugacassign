@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Data</title>
+</head>
+<body>
+<a href="{% url 'student:add' %}">ADD STUDENT</a>
+{% if studentList %}
+<ul>
+{% for entry in studentList %}
+<li>{{ entry.name }}--{{ entry.roll }}--{{ entry.department }}--{{ entry.hostel }}||<a href="{% url 'student:delete' entry.roll %}">DEL</a>||<a href="{% url 'student:edit' entry.roll %}">EDIT</a></li>
+{% endfor %}
+</ul>
+
+{% else %}
+<p>No data available</p>
+{% endif %}
+</body>
+</html>
