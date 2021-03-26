@@ -58,5 +58,15 @@ def editField(request,roll):
     ent.name=request.POST['name']
     ent.department=request.POST['department']
     ent.hostel=request.POST['hostel']
-    ent.save()
+    try:
+        ent.save()
+    except:
+        context={
+            'ErrorMessage': 'Something went worng',
+            'name':request.POST['name'],
+            'department':request.POST['department'],
+            'hostel':request.POST['hostel'],
+            'roll':roll
+        }
+        return render(request,'student/edit.html',context)
     return redirect('/')
